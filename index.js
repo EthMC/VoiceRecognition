@@ -39,6 +39,8 @@ const wss = new WebSocketServer({
 });
 
 wss.on("connection", function connection(socket) {
+  socket.on('error', console.error);
+  
   console.log("WebSocket Connected W/ MINECRAFT!");
   started = true;
 
